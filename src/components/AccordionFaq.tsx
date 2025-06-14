@@ -1,6 +1,7 @@
 
 import * as React from "react";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 import {
   Accordion,
   AccordionItem,
@@ -29,17 +30,24 @@ const faqs = [
 
 export default function AccordionFaq() {
   return (
-    <Accordion type="multiple" className="w-full max-w-2xl mx-auto">
+    <Accordion type="multiple" className="w-full max-w-3xl mx-auto space-y-4">
       {faqs.map((faq, idx) => (
-        <AccordionItem value={`item-${idx}`} key={idx}>
-          <AccordionTrigger className="group font-semibold text-lg flex items-center px-4 py-3 border border-gray-200 rounded-xl mb-2 hover:bg-brand-yellow/10 transition-colors">
-            <ChevronDown className="w-5 h-5 text-brand-blue transition-transform group-data-[state=open]:rotate-180 mr-3" />
-            {faq.q}
-          </AccordionTrigger>
-          <AccordionContent className="pl-11 pr-6 pb-4 text-gray-600">
-            {faq.a}
-          </AccordionContent>
-        </AccordionItem>
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+        >
+          <AccordionItem value={`item-${idx}`} className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden">
+            <AccordionTrigger className="group font-semibold text-lg flex items-center justify-between px-6 py-5 hover:bg-white/50 transition-all duration-300 text-left">
+              <span className="text-gray-900">{faq.q}</span>
+              <ChevronDown className="w-5 h-5 text-brand-blue transition-transform group-data-[state=open]:rotate-180 flex-shrink-0 ml-4" />
+            </AccordionTrigger>
+            <AccordionContent className="px-6 pb-5 text-gray-600 text-lg leading-relaxed">
+              {faq.a}
+            </AccordionContent>
+          </AccordionItem>
+        </motion.div>
       ))}
     </Accordion>
   );
