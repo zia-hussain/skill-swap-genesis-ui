@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -155,11 +154,11 @@
   }
   
   .bg-brand-blue {
-    background-color: hsl(var(--brand-blue));
+    background-color: #3c79f5;
   }
   
   .bg-brand-yellow {
-    background-color: hsl(var(--brand-yellow));
+    background-color: #ffd741;
   }
   
   .bg-brand-blue-light {
@@ -167,7 +166,7 @@
   }
   
   .bg-brand-blue-dark {
-    background-color: hsl(var(--brand-blue-dark));
+    background-color: #2066e0;
   }
   
   .bg-brand-yellow-light {
@@ -351,4 +350,12 @@
 
 .text-gradient-secondary {
   @apply bg-gradient-to-r from-brand-yellow to-brand-yellow-light bg-clip-text text-transparent;
+}
+
+.btn-shadow {
+  box-shadow: 0 8px 32px rgba(255, 215, 65, 0.22), 0 2px 8px rgba(66,100,255,0.05);
+}
+
+.shadow-yellow-lg {
+  box-shadow: 0 7px 28px 0 rgba(255, 215, 65, 0.18);
 }
