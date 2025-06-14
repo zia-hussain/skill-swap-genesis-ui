@@ -1,17 +1,17 @@
 
 import Hero from "@/components/Hero";
+import NavBar from "@/components/NavBar";
+import HowItWorks from "@/components/HowItWorks";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 const Index = () => (
-  <div className="bg-white min-h-screen font-inter">
+  <div className="bg-gradient-to-br from-slate-50 via-blue-50/30 to-yellow-50/20 min-h-screen font-inter">
+    <NavBar />
     <main>
       <Hero />
-      <div id="how-it-works" className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-          <p className="text-gray-600">Coming up next - let's perfect the hero first! 🔥</p>
-        </div>
-      </div>
+      <HowItWorks />
+      <Testimonials />
     </main>
     <Footer />
   </div>

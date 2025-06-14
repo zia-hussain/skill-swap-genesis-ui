@@ -1,8 +1,9 @@
 
 import { Link, useLocation } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -36,6 +37,7 @@ function Logo() {
 
 export default function NavBar() {
   const { pathname } = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl shadow-sm">
@@ -44,6 +46,7 @@ export default function NavBar() {
           <Logo />
         </Link>
         
+        {/* Desktop Navigation */}
         <div className="hidden md:flex gap-2 items-center">
           {navLinks.map(({ name, path }) => (
             <motion.div
@@ -64,18 +67,58 @@ export default function NavBar() {
           ))}
         </div>
 
-        {/* Mobile menu button - simplified for now */}
+        {/* Mobile menu button */}
         <div className="md:hidden">
           <motion.button
             whileTap={{ scale: 0.95 }}
             className="p-2 rounded-xl bg-brand-yellow/10 text-brand-yellow"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </motion.button>
         </div>
       </nav>
+
+      {/* Mobile Navigation Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden bg-white/95 backdrop-blur-xl shadow-lg"
+          >
+            <div className="container py-4">
+              <div className="flex flex-col gap-2">
+                {navLinks.map(({ name, path }) => (
+                  <motion.div
+                    key={name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Link
+                      to={path}
+                      className={cn(
+                        "block px-4 py-3 font-medium rounded-xl transition-all duration-300 hover:bg-brand-yellow/20 hover:text-brand-yellow",
+                        pathname === path && "text-brand-yellow bg-brand-yellow/10"
+                      )}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

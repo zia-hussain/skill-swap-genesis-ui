@@ -1,10 +1,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Sparkles, Users, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-yellow-50/20">
+    <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-yellow-50/20 pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating orbs */}
@@ -96,17 +97,21 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
         >
-          <motion.button
+          <motion.div
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group relative px-8 py-4 bg-gradient-to-r from-brand-yellow to-yellow-400 text-gray-900 font-semibold text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-brand-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="relative flex items-center gap-2">
-              Join Early Access
-              <TrendingUp className="w-5 h-5" />
-            </span>
-          </motion.button>
+            <Link
+              to="/register-interest"
+              className="group relative px-8 py-4 bg-gradient-to-r from-brand-yellow to-yellow-400 text-gray-900 font-semibold text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden inline-flex items-center gap-2"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-brand-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative flex items-center gap-2">
+                Join Early Access
+                <TrendingUp className="w-5 h-5" />
+              </span>
+            </Link>
+          </motion.div>
 
           <motion.button
             whileHover={{ scale: 1.02 }}
