@@ -57,7 +57,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/60 backdrop-blur-lg rounded-full border border-white/20 shadow-lg"
+          className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/60 backdrop-blur-lg rounded-full shadow-lg"
         >
           <Sparkles className="w-4 h-4 text-brand-yellow" />
           <span className="text-sm font-medium text-gray-700">Now in Early Access</span>
@@ -112,6 +112,7 @@ export default function Hero() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="px-8 py-4 text-gray-700 font-semibold text-lg hover:text-brand-blue transition-colors duration-300 flex items-center gap-2"
+            onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Explore How It Works
             <ArrowDown className="w-5 h-5" />
@@ -150,11 +151,11 @@ export default function Hero() {
           className="flex flex-col items-center gap-2 cursor-pointer group"
           onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
         >
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full p-1 group-hover:border-brand-blue transition-colors">
+          <div className="w-6 h-10 rounded-full p-1 group-hover:bg-white/20 transition-colors backdrop-blur-sm">
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-1 h-3 bg-gray-400 rounded-full group-hover:bg-brand-blue transition-colors"
+              className="w-1 h-3 bg-gray-400 rounded-full group-hover:bg-brand-blue transition-colors mx-auto"
             />
           </div>
           <span className="text-xs text-gray-500 group-hover:text-brand-blue transition-colors">Scroll to explore</span>
