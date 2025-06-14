@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 
@@ -14,10 +13,12 @@ export default function RegisterForm() {
   const [error, setError] = useState<string | null>(null);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type } = e.target;
     setFields((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === "checkbox"
+        ? (e.target as HTMLInputElement).checked
+        : value,
     }));
     setError(null);
   }
