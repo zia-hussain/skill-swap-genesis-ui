@@ -1,20 +1,17 @@
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+
 import Hero from "@/components/Hero";
-import HowItWorks from "@/components/HowItWorks";
-import Testimonials from "@/components/Testimonials";
+import Footer from "@/components/Footer";
 
 const Index = () => (
-  <div className="bg-neutralBg min-h-screen font-inter">
-    <NavBar />
+  <div className="bg-white min-h-screen font-inter">
     <main>
       <Hero />
-      {/* Placeholder for animated scroll down sections (add later) */}
-      <div id="how-it-works">
-        {/* We'll add this section after Hero is perfect */}
+      <div id="how-it-works" className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+          <p className="text-gray-600">Coming up next - let's perfect the hero first! 🔥</p>
+        </div>
       </div>
-      {/* <HowItWorks /> */}
-      {/* <Testimonials /> */}
     </main>
     <Footer />
   </div>
