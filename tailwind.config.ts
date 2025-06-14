@@ -20,8 +20,12 @@ export default {
     extend: {
       colors: {
         brand: {
-          yellow: '#F5C738',
-          blue: '#0072CE',
+          yellow: 'hsl(var(--brand-yellow))',
+          'yellow-light': 'hsl(var(--brand-yellow-light))',
+          'yellow-dark': 'hsl(var(--brand-yellow-dark))',
+          blue: 'hsl(var(--brand-blue))',
+          'blue-light': 'hsl(var(--brand-blue-light))',
+          'blue-dark': 'hsl(var(--brand-blue-dark))',
         },
         neutralBg: "#f9f9f9",
         background: "hsl(var(--background))",
@@ -61,18 +65,29 @@ export default {
       },
       boxShadow: {
         soft: "0 2px 8px 0 rgba(0, 0, 0, 0.04)",
+        'glass': '0 8px 32px rgba(0, 0, 0, 0.1)',
+        'premium': '0 20px 40px rgba(0, 0, 0, 0.1)',
       },
       keyframes: {
         fadeInUp: {
-          '0%': { opacity: 0, transform: 'translateY(24px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        glow: {
+          '0%': { boxShadow: '0 0 5px hsl(var(--brand-yellow)), 0 0 10px hsl(var(--brand-yellow))' },
+          '100%': { boxShadow: '0 0 10px hsl(var(--brand-blue)), 0 0 20px hsl(var(--brand-blue))' },
         },
       },
       animation: {
-        fadeInUp: "fadeInUp 0.6s cubic-bezier(.4,0,.2,1) both"
+        fadeInUp: "fadeInUp 0.6s cubic-bezier(.4,0,.2,1) both",
+        float: "float 6s ease-in-out infinite",
+        glow: "glow 2s ease-in-out infinite alternate",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-

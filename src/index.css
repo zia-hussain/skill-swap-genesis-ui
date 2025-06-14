@@ -46,9 +46,13 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Custom Brand Colors */
-    --brand-blue: 213 94% 68%;
-    --brand-yellow: 48 94% 68%;
+    /* Premium Brand Colors - Blue and Yellow Theme */
+    --brand-blue: 213 94% 55%;
+    --brand-yellow: 48 94% 60%;
+    --brand-blue-light: 213 94% 65%;
+    --brand-blue-dark: 213 94% 45%;
+    --brand-yellow-light: 48 94% 70%;
+    --brand-yellow-dark: 48 94% 50%;
   }
 
   .dark {
@@ -125,13 +129,29 @@
 }
 
 @layer utilities {
-  /* Custom brand colors */
+  /* Premium brand colors */
   .text-brand-blue {
     color: hsl(var(--brand-blue));
   }
   
   .text-brand-yellow {
     color: hsl(var(--brand-yellow));
+  }
+  
+  .text-brand-blue-light {
+    color: hsl(var(--brand-blue-light));
+  }
+  
+  .text-brand-blue-dark {
+    color: hsl(var(--brand-blue-dark));
+  }
+  
+  .text-brand-yellow-light {
+    color: hsl(var(--brand-yellow-light));
+  }
+  
+  .text-brand-yellow-dark {
+    color: hsl(var(--brand-yellow-dark));
   }
   
   .bg-brand-blue {
@@ -142,12 +162,44 @@
     background-color: hsl(var(--brand-yellow));
   }
   
+  .bg-brand-blue-light {
+    background-color: hsl(var(--brand-blue-light));
+  }
+  
+  .bg-brand-blue-dark {
+    background-color: hsl(var(--brand-blue-dark));
+  }
+  
+  .bg-brand-yellow-light {
+    background-color: hsl(var(--brand-yellow-light));
+  }
+  
+  .bg-brand-yellow-dark {
+    background-color: hsl(var(--brand-yellow-dark));
+  }
+  
   .border-brand-blue {
     border-color: hsl(var(--brand-blue));
   }
   
   .border-brand-yellow {
     border-color: hsl(var(--brand-yellow));
+  }
+
+  /* Enhanced premium gradients */
+  .gradient-brand {
+    background: linear-gradient(135deg, hsl(var(--brand-yellow)), hsl(var(--brand-blue)));
+  }
+  
+  .gradient-brand-reverse {
+    background: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-yellow)));
+  }
+  
+  .gradient-text-brand {
+    background: linear-gradient(135deg, hsl(var(--brand-yellow)), hsl(var(--brand-blue)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   /* Enhanced animations */
@@ -171,7 +223,11 @@
     animation: scaleIn 0.3s ease-out;
   }
 
-  /* Backdrop blur utilities */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Premium backdrop blur utilities */
   .backdrop-blur-xs {
     backdrop-filter: blur(2px);
   }
@@ -198,6 +254,21 @@
 
   .backdrop-blur-3xl {
     backdrop-filter: blur(32px);
+  }
+
+  /* Premium glassmorphism effects */
+  .glass-premium {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -252,23 +323,32 @@
   }
 }
 
-/* Font improvements */
+/* Premium fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 .font-inter {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Improved focus states */
+/* Enhanced focus states */
 .focus-ring {
   @apply focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 focus:ring-offset-white;
 }
 
-/* Glass morphism utility */
-.glass {
-  @apply bg-white/10 backdrop-blur-lg border border-white/20;
+/* Premium button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-brand-yellow to-brand-yellow-light text-gray-900 font-bold py-3 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
 }
 
-.glass-dark {
-  @apply bg-black/10 backdrop-blur-lg border border-black/20;
+.btn-secondary {
+  @apply bg-white/90 text-brand-blue font-semibold py-3 px-6 rounded-2xl border border-brand-blue/20 hover:bg-brand-blue hover:text-white transition-all duration-300;
+}
+
+/* Premium text styles */
+.text-gradient-primary {
+  @apply bg-gradient-to-r from-brand-blue to-brand-blue-light bg-clip-text text-transparent;
+}
+
+.text-gradient-secondary {
+  @apply bg-gradient-to-r from-brand-yellow to-brand-yellow-light bg-clip-text text-transparent;
 }
