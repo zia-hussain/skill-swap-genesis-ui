@@ -10,13 +10,16 @@ import FAQ from "./pages/FAQ";
 import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
+// This useScrollToTop will scroll to the top on every route change, for perfect flow
 const ScrollToTop = () => {
+  const location = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
   return null;
 };
 
@@ -26,12 +29,12 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route
             path="*"
             element={
               <>
-                <ScrollToTop />
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<About />} />

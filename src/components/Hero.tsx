@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-start items-center bg-gradient-to-br from-[#f6faff] via-[#fafdff] to-[#fdf8e3] px-2 pt-32 pb-12 sm:pb-0 overflow-x-hidden">
+    <section className="relative min-h-screen flex flex-col justify-start items-center bg-gradient-to-br from-[#f6faff] via-[#fafdff] to-[#fdf8e3] px-2 pt-28 pb-10 sm:pt-36 overflow-x-hidden">
       {/* Animated Badge */}
       <motion.div
         initial={{ opacity: 0, y: 20, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="inline-flex items-center gap-2 px-5 py-2.5 mb-7 bg-white shadow-[0_4px_24px_0_rgba(66,100,255,0.07)] rounded-full border border-white/80"
+        className="inline-flex items-center gap-2 px-5 py-2 mb-7 bg-white shadow-[0_4px_24px_0_rgba(66,100,255,0.08)] rounded-full border border-white/70"
         style={{ zIndex: 2 }}
       >
         <Sparkles className="w-5 h-5 text-brand-yellow" />
@@ -24,16 +24,14 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.05 }}
-        className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-8xl font-extrabold tracking-tight text-center leading-[1.08] sm:leading-tight mb-4"
+        className="text-4xl xs:text-5xl md:text-7xl xl:text-8xl font-extrabold tracking-tight text-center mb-4 leading-[1.08]"
       >
         <span className="block text-neutral-900">Skill-Powered Learning.</span>
-        <span
-          className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-[#ceb24b] to-brand-blue-dark"
+        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-[#ceb24b] to-brand-blue-dark"
           style={{
             backgroundImage:
               "linear-gradient(90deg,#ffd741 0%,#fae57e 30%,#3c79f5 95%)"
-          }}
-        >
+          }}>
           Human-First Connections.
         </span>
       </motion.h1>
@@ -43,31 +41,30 @@ export default function Hero() {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.22 }}
-        className="mx-auto max-w-2xl md:max-w-3xl lg:max-w-3xl xl:max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 text-center mt-2 mb-2"
+        className="mx-auto max-w-2xl md:max-w-3xl text-base xs:text-lg md:text-2xl text-gray-700 text-center mt-2 mb-2"
       >
         A global skill-sharing platform where you grow{" "}
-        <a
-          href="#"
+        <span
           className="text-brand-blue font-semibold underline underline-offset-2 decoration-2 hover:text-brand-blue-dark transition-colors"
           style={{ color: "#2066e0" }}
         >
           by helping others grow.
-        </a>
+        </span>
       </motion.p>
       <motion.p
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.33 }}
-        className="mx-auto max-w-xl text-gray-500 text-center text-sm sm:text-base mt-0 mb-6 sm:mb-10"
+        className="mx-auto max-w-xl text-gray-500 text-center text-sm xs:text-base mt-0 mb-6 sm:mb-10"
       >
         Connect, learn, and transform together in the world's most innovative learning community.
       </motion.p>
 
       {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 mb-12 items-center w-full justify-center z-50">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 mb-12 items-center w-full justify-center z-40">
         <Link
           to="/register-interest"
-          className="btn-shadow flex items-center justify-center gap-2 min-w-[235px] py-3 px-7 rounded-full bg-brand-yellow text-neutral-900 font-bold text-lg shadow-yellow-lg hover:brightness-95 focus:ring-2 ring-brand-yellow-dark transition-all duration-200"
+          className="btn-shadow flex items-center justify-center gap-2 min-w-[210px] py-3 px-7 rounded-full bg-brand-yellow text-neutral-900 font-bold text-lg shadow-yellow-lg hover:brightness-95 focus:ring-2 ring-brand-yellow-dark transition-all duration-200"
           style={{
             boxShadow:
               "0 8px 32px 0 rgba(255, 215, 65, 0.18), 0 1.5px 4px 0 rgba(66,100,255,0.02)"
@@ -96,7 +93,7 @@ export default function Hero() {
               {Array.from({ length: 4 }).map((_, k) => (
                 <div
                   key={k}
-                  className="w-6 h-6 rounded-full border-[2.5px] border-white bg-gradient-to-br from-[#746dff] to-[#7ecbff] shadow"
+                  className="w-6 h-6 rounded-full border-2 border-white bg-gradient-to-br from-[#746dff] to-[#7ecbff] shadow"
                 />
               ))}
             </div>
@@ -127,8 +124,8 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center select-none pointer-events-none opacity-80">
-        <div className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center mb-1 bg-white">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center select-none pointer-events-none opacity-85">
+        <div className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center mb-1 bg-white z-10">
           <div className="w-2 h-5 bg-gray-400 rounded-full animate-bounce"></div>
         </div>
         <span className="text-sm text-gray-400 font-medium">Scroll to explore</span>
