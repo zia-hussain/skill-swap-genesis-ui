@@ -11,8 +11,6 @@ const containerVariants = {
   visible: { opacity: 1, y: 0 }
 };
 
-const HOME_MOTION_EASE = [0.25, 0.1, 0.25, 1];
-
 const Index = () => {
   return (
     <div className="bg-[#F6FAFD] min-h-screen font-inter" data-scroll-container>
@@ -25,7 +23,7 @@ const Index = () => {
           animate="visible"
           transition={{
             duration: 0.7,
-            ease: HOME_MOTION_EASE,
+            ease: "easeInOut",
             delay: 0.05
           }}
         >
@@ -39,7 +37,7 @@ const Index = () => {
           viewport={{ once: true, amount: 0.2 }}
           transition={{
             duration: 0.85,
-            ease: HOME_MOTION_EASE,
+            ease: "easeInOut",
             delay: 0.20
           }}
         >
@@ -53,7 +51,7 @@ const Index = () => {
           viewport={{ once: true, amount: 0.2 }}
           transition={{
             duration: 1,
-            ease: HOME_MOTION_EASE,
+            ease: "easeInOut",
             delay: 0.35
           }}
         >
@@ -66,4 +64,3 @@ const Index = () => {
 };
 
 export default Index;
-
