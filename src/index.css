@@ -291,6 +291,33 @@
       animation-duration: .8s !important;
     }
   }
+
+  /* === CUSTOM GLASSY DARK THEME UPDATES FOR HERO & NAVBAR === */
+  /* Glassy backgrounds for dark mode */
+  .glass-dark {
+    background: rgba(20, 28, 50, 0.58);
+    border-radius: 1.3rem;
+    backdrop-filter: blur(22px) saturate(1.4);
+    border: 1px solid rgba(220,220,255,0.17);
+    box-shadow: 0 14px 44px 0 rgba(80, 120, 220, 0.14), 0 2px 10px 0 rgba(255, 215, 65, 0.12);
+  }
+
+  /* Fancy text gradients for logo, headings, oversized font scaling */
+  .gradient-text-brand {
+    background: linear-gradient(110deg, #ffd741 20%, #3c79f5 55%, #758bfd 95%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-yellow-lg {
+    box-shadow: 0 9px 32px 0 rgba(255, 215, 65, 0.20), 0 2.5px 7px 0 rgba(66,100,255,0.08);
+  }
+
+  /* Animate subtle glows */
+  .animate-glow {
+    animation: glow 2.5s ease-in-out infinite alternate;
+  }
 }
 
 @keyframes float {
