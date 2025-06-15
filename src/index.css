@@ -469,7 +469,7 @@
 .heading-soft {
   color: #26303B;
   font-weight: 800;
-  // We'll use "gradient-text-brand" on spans for color highlight
+  /* We'll use "gradient-text-brand" on spans for color highlight */
 }
 .stat-number {
   font-weight: 800;
