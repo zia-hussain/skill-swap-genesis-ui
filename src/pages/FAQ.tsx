@@ -6,7 +6,7 @@ import { HelpCircle, Mail } from "lucide-react";
 
 export default function FAQ() {
   return (
-    <div className="bg-brand-gradient min-h-screen font-inter">
+    <div className="bg-gradient-to-br from-slate-50 via-blue-50/30 to-yellow-50/20 min-h-screen font-inter">
       <NavBar />
       <main className="pt-20">
         <section className="container py-16 px-2">
@@ -17,24 +17,15 @@ export default function FAQ() {
                 <span className="text-sm font-medium text-brand-blue">Need Help?</span>
               </div>
               <h1
-                className="text-4xl md:text-5xl font-bold tracking-tight mb-6"
-                style={{
-                  background: "linear-gradient(90deg, #33A4EE 28%, #F5C738 99%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent"
-                }}
+                className="text-4xl md:text-5xl font-bold tracking-tight mb-6 gradient-text-brand"
               >
                 Your Questions,
                 <br />
-                <span style={{
-                  background: "linear-gradient(90deg, #F5C738 0%, #33A4EE 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent"
-                }}>
+                <span className="text-brand-yellow">
                   Answered
                 </span>
               </h1>
-              <p className="text-lg text-brand-blue/70 mb-10">
+              <p className="text-lg text-neutral-700 mb-10">
                 Everything you need to know about Skill x Swap
               </p>
             </div>
@@ -48,7 +39,7 @@ export default function FAQ() {
                 </div>
                 <div className="text-xl font-semibold text-brand-blue">Still have questions?</div>
               </div>
-              <div className="text-brand-blue/70 mb-6">Just drop us an email and we’ll get back to you soon:</div>
+              <div className="text-neutral-700 mb-6">Just drop us an email and we’ll get back to you soon:</div>
               <a 
                 href="mailto:hello@skillxswap.com" 
                 className="inline-flex items-center gap-2 btn-glass-yellow px-7 py-3 font-bold rounded-3xl shadow"

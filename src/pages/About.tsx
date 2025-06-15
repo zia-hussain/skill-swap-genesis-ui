@@ -27,11 +27,11 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent leading-tight"
+              className="text-4xl md:text-6xl font-bold tracking-tight mb-6 gradient-text-brand leading-tight"
             >
               Why We Built
               <br />
-              <span className="bg-gradient-to-r from-brand-yellow via-yellow-400 to-brand-blue bg-clip-text text-transparent">
+              <span className="text-brand-yellow font-extrabold">
                 Skill x Swap
               </span>
             </motion.h1>
@@ -40,7 +40,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl text-neutral-600 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
               Learning should be accessible, collaborative,{" "}
               <span className="font-semibold text-brand-yellow">empowering for everyone.</span>
@@ -57,16 +57,16 @@ export default function About() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-              className="bg-white/70 backdrop-blur-lg rounded-3xl p-8 shadow-xl"
+              className="bg-white/85 backdrop-blur-lg rounded-3xl p-8 shadow-xl"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-r from-brand-yellow to-yellow-400 rounded-2xl flex items-center justify-center">
                   <Globe className="w-6 h-6 text-gray-900" />
                 </div>
-                <h2 className="font-bold text-2xl text-gray-900">Our Mission</h2>
+                <h2 className="font-bold text-2xl text-brand-blue">Our Mission</h2>
               </div>
               
-              <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+              <p className="text-neutral-700 mb-6 text-lg leading-relaxed">
                 Skill x Swap was born out of a simple but powerful idea:
                 <span className="font-semibold text-brand-blue"> What if we could all grow by helping each other?</span>
               </p>
@@ -76,21 +76,21 @@ export default function About() {
                   <div className="w-2 h-2 bg-brand-yellow rounded-full mt-2 flex-shrink-0"></div>
                   <div>
                     <span className="font-semibold text-gray-900">No fees or exclusivity:</span>
-                    <span className="text-gray-700"> Anyone can join, share, and learn.</span>
+                    <span className="text-neutral-700"> Anyone can join, share, and learn.</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-brand-blue rounded-full mt-2 flex-shrink-0"></div>
                   <div>
                     <span className="font-semibold text-gray-900">No pro credentials required:</span>
-                    <span className="text-gray-700"> If you have a skill, you're valuable here.</span>
+                    <span className="text-neutral-700"> If you have a skill, you're valuable here.</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-brand-yellow rounded-full mt-2 flex-shrink-0"></div>
                   <div>
                     <span className="font-semibold text-gray-900">Learning, reimagined:</span>
-                    <span className="text-gray-700"> The only currency is experience and support.</span>
+                    <span className="text-neutral-700"> The only currency is experience and support.</span>
                   </div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export default function About() {
                 whileTap={{ scale: 0.98 }}
               >
                 <Link to="/register-interest"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-yellow to-yellow-400 text-gray-900 font-semibold px-6 py-3 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+                  className="inline-flex items-center gap-2 btn-glass-yellow text-gray-900 font-bold px-6 py-3 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
                 >
                   <Users className="w-5 h-5" />
                   Join the Movement
@@ -114,9 +114,9 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
               className="flex flex-col justify-center"
             >
-              <div className="bg-white/70 backdrop-blur-lg rounded-3xl p-8 shadow-xl relative">
+              <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-xl relative">
                 <Quote className="absolute -top-4 -left-4 text-brand-yellow/20 w-16 h-16"/>
-                <div className="text-xl italic mb-6 text-gray-800 leading-relaxed">
+                <div className="text-xl italic mb-6 text-neutral-800 leading-relaxed">
                   "I couldn't find what I needed—so I built it.<br/>
                   Learning should be for everyone, everywhere, at any stage."
                 </div>
@@ -125,8 +125,8 @@ export default function About() {
                     <span className="text-white font-bold text-lg">S</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Samantha</div>
-                    <div className="text-gray-600 text-sm">Founder & Visionary</div>
+                    <div className="font-semibold text-neutral-900">Samantha</div>
+                    <div className="text-neutral-600 text-sm">Founder & Visionary</div>
                   </div>
                 </div>
               </div>

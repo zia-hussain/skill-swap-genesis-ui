@@ -24,18 +24,18 @@ export default function Legal() {
                 className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/60 backdrop-blur-lg rounded-full shadow-lg"
               >
                 <Shield className="w-4 h-4 text-brand-yellow" />
-                <span className="text-sm font-medium text-gray-700">Privacy & Legal</span>
+                <span className="text-sm font-medium text-brand-blue">Privacy & Legal</span>
               </motion.div>
 
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent leading-tight"
+                className="text-4xl md:text-5xl font-bold tracking-tight mb-6 gradient-text-brand"
               >
                 Legal
                 <br />
-                <span className="bg-gradient-to-r from-brand-yellow via-yellow-400 to-brand-blue bg-clip-text text-transparent">
+                <span className="text-brand-yellow">
                   Notice
                 </span>
               </motion.h1>
@@ -44,7 +44,7 @@ export default function Legal() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="text-xl text-gray-600 mb-12 leading-relaxed"
+                className="text-xl text-neutral-600 mb-12 leading-relaxed"
               >
                 Your privacy and trust matter to us
               </motion.p>
@@ -57,15 +57,15 @@ export default function Legal() {
               className="grid gap-6"
             >
               {/* Privacy Section */}
-              <div className="bg-white/70 backdrop-blur-lg rounded-3xl p-8 shadow-xl">
+              <div className="bg-white/85 backdrop-blur-lg rounded-3xl p-8 shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-brand-blue to-blue-500 rounded-2xl flex items-center justify-center">
                     <Lock className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="font-bold text-2xl text-gray-900">Privacy & Data Protection</h2>
+                  <h2 className="font-bold text-2xl text-brand-blue">Privacy & Data Protection</h2>
                 </div>
                 
-                <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                <div className="space-y-4 text-neutral-700 text-lg leading-relaxed">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-brand-yellow rounded-full mt-2 flex-shrink-0"></div>
                     <span>All data is processed according to standard GDPR practices.</span>
@@ -82,15 +82,15 @@ export default function Legal() {
               </div>
 
               {/* Terms Section */}
-              <div className="bg-white/70 backdrop-blur-lg rounded-3xl p-8 shadow-xl">
+              <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-brand-yellow to-yellow-400 rounded-2xl flex items-center justify-center">
                     <FileText className="w-6 h-6 text-gray-900" />
                   </div>
-                  <h2 className="font-bold text-2xl text-gray-900">Terms & Conditions</h2>
+                  <h2 className="font-bold text-2xl text-brand-blue">Terms & Conditions</h2>
                 </div>
                 
-                <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                <div className="space-y-4 text-neutral-700 text-lg leading-relaxed">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-brand-blue rounded-full mt-2 flex-shrink-0"></div>
                     <span>Site content © Skill x Swap. All rights reserved.</span>
@@ -107,15 +107,15 @@ export default function Legal() {
               </div>
 
               {/* Transparency Section */}
-              <div className="bg-white/70 backdrop-blur-lg rounded-3xl p-8 shadow-xl">
+              <div className="bg-white/85 backdrop-blur-lg rounded-3xl p-8 shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center">
                     <Eye className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="font-bold text-2xl text-gray-900">Our Commitment</h2>
+                  <h2 className="font-bold text-2xl text-brand-blue">Our Commitment</h2>
                 </div>
                 
-                <div className="text-gray-700 text-lg leading-relaxed">
+                <div className="text-neutral-700 text-lg leading-relaxed">
                   <p className="mb-4">
                     We believe in complete transparency. As we build Skill x Swap, your privacy and trust 
                     remain our top priorities. We'll always be clear about how we use your information 

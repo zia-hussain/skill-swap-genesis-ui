@@ -32,7 +32,7 @@ export default function NavBar() {
   }, []);
   useEffect(() => setIsMobileMenuOpen(false), [pathname]);
   return (
-    <header className="fixed top-0 w-full z-40 bg-brand-gradient shadow-none border-b border-slate-100/50">
+    <header className="fixed top-0 w-full z-40 bg-white/70 backdrop-blur-[16px] shadow-md border-b border-slate-100/50">
       <nav className="container flex items-center justify-between h-16 sm:h-20 px-4">
         <Link to="/" className="flex items-center">
           <Logo />
@@ -44,8 +44,8 @@ export default function NavBar() {
               to={path}
               className={`px-5 py-2 font-semibold rounded-3xl transition-all duration-200 ${
                 pathname === path
-                  ? "text-brand-blue bg-white/70 shadow-neumorph border border-slate-200"
-                  : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/7"
+                  ? "text-brand-blue bg-brand-yellow/10 shadow border border-brand-yellow"
+                  : "text-neutral-700 hover:text-brand-yellow hover:bg-brand-blue/7"
               }`}
             >
               {name}
@@ -53,7 +53,7 @@ export default function NavBar() {
           ))}
           <Link
             to="/register-interest"
-            className="ml-4 px-7 py-2.5 rounded-3xl btn-glass text-brand-blue font-bold shadow-neumorph hover:opacity-90"
+            className="ml-4 px-7 py-2.5 rounded-3xl btn-glass-yellow text-brand-blue font-bold shadow-neumorph hover:opacity-90"
             style={{ pointerEvents: "auto" }}
           >
             Join Early Access
@@ -61,7 +61,7 @@ export default function NavBar() {
         </div>
         <div className="lg:hidden">
           <button
-            className="p-2.5 rounded-xl bg-brand-blue/10 text-brand-blue"
+            className="p-2.5 rounded-xl bg-neutral-200/60 text-brand-blue"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <span className="text-xl">✖️</span> : <span className="text-xl">☰</span>}
@@ -77,7 +77,7 @@ export default function NavBar() {
                 to={path}
                 className={`block px-5 py-3 font-semibold rounded-full text-base transition-all duration-150 text-center ${
                   pathname === path
-                    ? "text-brand-blue bg-brand-yellow/13 border border-brand-blue/8 shadow"
+                    ? "text-brand-blue bg-brand-yellow/14 border border-brand-yellow shadow"
                     : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/12"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -87,7 +87,7 @@ export default function NavBar() {
             ))}
             <Link
               to="/register-interest"
-              className="mt-3 w-full bg-white/90 text-brand-blue font-bold py-3 rounded-full shadow btn-glass"
+              className="mt-3 w-full bg-white/90 text-brand-blue font-bold py-3 rounded-full shadow btn-glass-yellow"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               🚀 Join Early Access

@@ -347,7 +347,7 @@
   }
 
   /* Fancy text gradients for logo, headings, oversized font scaling */
-  .gradient-text-brand {
+  .gradient-text-brand, .gradient-text-brand-light {
     background: linear-gradient(110deg, #33A4EE 20%, #F5C738 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

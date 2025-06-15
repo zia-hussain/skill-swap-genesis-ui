@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Sparkles, Rocket, TrendingUp } from "lucide-react";
 
@@ -21,21 +20,11 @@ function HeroBackground() {
 function GradientHeadline() {
   return (
     <h1
-      className="text-center font-black mb-7 w-full px-2 text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
-      style={{
-        background: "linear-gradient(103deg, #33A4EE 20%, #F5C738 90%)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        backgroundClip: "text",
-      }}
+      className="text-center font-black mb-7 w-full px-2 text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-tight gradient-text-brand"
     >
-      <span>Share &amp; Master Skills — <span style={{ color: "#F5C738" }}>Effortlessly.</span></span>
+      Share &amp; Master Skills — <span className="text-brand-yellow">Effortlessly.</span>
       <br />
-      <span style={{
-        background: "linear-gradient(103deg, #33A4EE 70%, #F5C738 100%)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent"}}
-      >
+      <span className="gradient-text-brand font-extrabold drop-shadow-xl">
         Your premium global skill community.
       </span>
     </h1>
@@ -45,10 +34,10 @@ function GradientHeadline() {
 function HeroSubtext() {
   return (
     <>
-      <p className="max-w-xl text-center text-lg xs:text-xl md:text-2xl text-brand-blue/90 font-medium mb-1">
+      <p className="max-w-xl text-center text-lg xs:text-xl md:text-2xl text-neutral-800 font-medium mb-1">
         Grow by helping others, <span className="text-brand-yellow font-semibold underline underline-offset-2">effortlessly.</span>
       </p>
-      <p className="max-w-md text-center text-brand-blue/75 text-base sm:text-lg mb-7">
+      <p className="max-w-md text-center text-neutral-500 text-base sm:text-lg mb-7">
         Swap skills, unlock opportunities, and join a thoughtful, premium community built just for you.
       </p>
     </>
@@ -60,7 +49,7 @@ function CTAButtons() {
     <div className="flex flex-col xs:flex-row gap-3 xs:gap-6 w-full xs:w-auto justify-center items-center mb-8">
       <Link
         to="/register-interest"
-        className="py-3 px-8 rounded-full btn-glass-yellow text-[1.08rem] shadow-xl min-w-[210px] text-center hover:shadow-lg focus-visible:ring-2 focus-visible:ring-brand-blue"
+        className="py-3 px-8 rounded-full btn-glass-yellow text-[1.08rem] shadow-xl min-w-[210px] text-center hover:shadow-lg font-bold focus-visible:ring-2 focus-visible:ring-brand-blue"
       >
         <Rocket className="w-5 h-5 inline mr-2 -mt-1" />
         Join Early Access
@@ -68,7 +57,7 @@ function CTAButtons() {
       </Link>
       <a
         href="#how-it-works"
-        className="py-3 px-8 rounded-full btn-glass-blue shadow-xl text-[1.08rem] min-w-[210px] text-center hover:shadow-lg focus-visible:ring-2 focus-visible:ring-brand-blue"
+        className="py-3 px-8 rounded-full btn-glass-blue shadow-xl text-[1.08rem] min-w-[210px] text-center hover:shadow-lg font-bold focus-visible:ring-2 focus-visible:ring-brand-blue"
       >
         Explore How It Works
       </a>
