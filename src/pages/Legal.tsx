@@ -1,59 +1,30 @@
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Shield, FileText, Lock, Eye } from "lucide-react";
+import { Shield, FileText, Lock, Eye, ShieldCheck } from "lucide-react";
 
 export default function Legal() {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50/30 to-yellow-50/20 min-h-screen font-inter">
+    <div className="bg-[#F6FAFD] min-h-screen font-inter">
       <NavBar />
       <main className="pt-20">
-        <section className="container py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+        <section className="container py-16 px-2">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-5 py-2 mb-6 bg-white/95 rounded-full shadow-lg border border-white text-sm font-semibold">
+                <ShieldCheck className="w-4 h-4 text-brand-yellow" />
+                <span className="text-brand-blue font-bold">Privacy & Legal</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 heading-soft gradient-text-brand"
+              >
+                Legal Notice
+              </h1>
+              <p className="text-lg text-[#4B5D72]">Your privacy and trust matter to us</p>
+            </div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-center mb-12"
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/60 backdrop-blur-lg rounded-full shadow-lg"
-              >
-                <Shield className="w-4 h-4 text-brand-yellow" />
-                <span className="text-sm font-medium text-brand-blue">Privacy & Legal</span>
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                className="text-4xl md:text-5xl font-bold tracking-tight mb-6 gradient-text-brand"
-              >
-                Legal
-                <br />
-                <span className="text-brand-yellow">
-                  Notice
-                </span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="text-xl text-neutral-600 mb-12 leading-relaxed"
-              >
-                Your privacy and trust matter to us
-              </motion.p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               className="grid gap-6"
             >
               {/* Privacy Section */}

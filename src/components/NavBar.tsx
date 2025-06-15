@@ -32,7 +32,7 @@ export default function NavBar() {
   }, []);
   useEffect(() => setIsMobileMenuOpen(false), [pathname]);
   return (
-    <header className="fixed top-0 w-full z-40 bg-white/70 backdrop-blur-[16px] shadow-md border-b border-slate-100/50">
+    <header className="fixed top-0 w-full z-40 bg-white/80 backdrop-blur-[17px] shadow-md border-b border-slate-100">
       <nav className="container flex items-center justify-between h-16 sm:h-20 px-4">
         <Link to="/" className="flex items-center">
           <Logo />
@@ -44,8 +44,8 @@ export default function NavBar() {
               to={path}
               className={`px-5 py-2 font-semibold rounded-3xl transition-all duration-200 ${
                 pathname === path
-                  ? "text-brand-blue bg-brand-yellow/10 shadow border border-brand-yellow"
-                  : "text-neutral-700 hover:text-brand-yellow hover:bg-brand-blue/7"
+                  ? "text-brand-blue bg-brand-yellow/12 shadow border border-brand-yellow"
+                  : "text-neutral-700 hover:text-brand-yellow hover:bg-brand-blue/8"
               }`}
             >
               {name}
@@ -69,7 +69,7 @@ export default function NavBar() {
         </div>
       </nav>
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white/96 shadow-xl border-t rounded-b-3xl border-brand-blue/7">
+        <div className="lg:hidden bg-white/97 shadow-xl border-t rounded-b-3xl border-brand-blue/8">
           <div className="container py-4 px-4 flex flex-col gap-2">
             {navLinks.map(({ name, path }) => (
               <Link
@@ -77,8 +77,8 @@ export default function NavBar() {
                 to={path}
                 className={`block px-5 py-3 font-semibold rounded-full text-base transition-all duration-150 text-center ${
                   pathname === path
-                    ? "text-brand-blue bg-brand-yellow/14 border border-brand-yellow shadow"
-                    : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/12"
+                    ? "text-brand-blue bg-brand-yellow/16 border border-brand-yellow shadow"
+                    : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/7"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >

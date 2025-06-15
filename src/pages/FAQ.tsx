@@ -6,40 +6,37 @@ import { HelpCircle, Mail } from "lucide-react";
 
 export default function FAQ() {
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50/30 to-yellow-50/20 min-h-screen font-inter">
+    <div className="bg-[#F6FAFD] min-h-screen font-inter">
       <NavBar />
       <main className="pt-20">
         <section className="container py-16 px-2">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/80 rounded-full shadow-neumorph">
+              <div className="inline-flex items-center gap-2 px-5 py-2 mb-7 bg-white/95 rounded-full shadow-lg border border-white text-sm font-semibold">
                 <HelpCircle className="w-4 h-4 text-brand-yellow" />
-                <span className="text-sm font-medium text-brand-blue">Need Help?</span>
+                <span className="text-brand-blue font-bold">Need Help?</span>
               </div>
-              <h1
-                className="text-4xl md:text-5xl font-bold tracking-tight mb-6 gradient-text-brand"
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-5 heading-soft gradient-text-brand"
               >
                 Your Questions,
                 <br />
-                <span className="text-brand-yellow">
-                  Answered
-                </span>
+                Answered
               </h1>
-              <p className="text-lg text-neutral-700 mb-10">
+              <p className="text-lg text-[#436599] mb-10">
                 Everything you need to know about Skill x Swap
               </p>
             </div>
             <div className="mb-12">
               <AccordionFaq />
             </div>
-            <div className="bg-white/98 rounded-xl p-8 shadow-neumorph text-center max-w-2xl mx-auto mt-8 border border-slate-100">
-              <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="bg-white/98 rounded-xl card-glass p-8 shadow-lg text-center max-w-2xl mx-auto mt-8 border border-slate-100">
+              <div className="flex items-center justify-center gap-3 mb-3">
                 <div className="w-12 h-12 bg-gradient-to-r from-brand-blue to-blue-500 rounded-2xl flex items-center justify-center">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-xl font-semibold text-brand-blue">Still have questions?</div>
               </div>
-              <div className="text-neutral-700 mb-6">Just drop us an email and we’ll get back to you soon:</div>
+              <div className="text-[#486086] mb-5">Just drop us an email and we’ll get back to you soon:</div>
               <a 
                 href="mailto:hello@skillxswap.com" 
                 className="inline-flex items-center gap-2 btn-glass-yellow px-7 py-3 font-bold rounded-3xl shadow"

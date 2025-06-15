@@ -1,4 +1,3 @@
-
 import { Facebook, Instagram, Linkedin, Heart, Mail, MapPin, Phone, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -44,7 +43,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#171C2E] bg-gradient-to-tr from-[#1A223C] to-[#212A47] text-white py-16 px-0 border-t border-[#222944] shadow-[0_-1px_16px_rgba(44,66,120,0.11),_0_8px_28px_0_rgba(244,202,66,0.11)]">
+    <footer className="bg-[#181E2F] bg-gradient-to-tr from-[#232F49] to-[#2B365A] text-white py-16 px-0 border-t border-[#232941] shadow-[0_-1px_14px_rgba(44,66,120,0.13)]">
       <div className="container mx-auto">
         <div className="grid gap-16 md:grid-cols-5 mb-12">
           {/* Brand */}
