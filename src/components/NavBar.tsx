@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -39,8 +38,8 @@ export default function NavBar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-slate-900/80 backdrop-blur-xl shadow-xl border-b border-white/10"
-        : "bg-slate-900/55 backdrop-blur-2xl shadow-lg"
+        ? "bg-white/85 backdrop-blur-2xl shadow-xl border-b border-brand-blue/15"
+        : "bg-white/70 backdrop-blur-xl shadow-lg"
       }`}
     >
       <nav className="container mx-auto flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 lg:px-8">
@@ -53,8 +52,8 @@ export default function NavBar() {
               key={name}
               to={path}
               className={`px-4 py-2 font-semibold text-base rounded-xl transition-all duration-200 ${pathname === path
-                ? "text-brand-yellow bg-slate-900/80 border border-brand-yellow/35 shadow-lg"
-                : "text-gray-200 hover:text-brand-yellow hover:bg-brand-blue/25"
+                ? "text-brand-blue bg-brand-yellow/60 border border-brand-blue/35 shadow-lg"
+                : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/8"
               }`}
             >
               {name}
@@ -70,8 +69,8 @@ export default function NavBar() {
         <div className="lg:hidden">
           <button
             className={`p-2.5 rounded-xl transition-all duration-200 ${isMobileMenuOpen
-              ? "bg-brand-blue/40 text-brand-yellow"
-              : "bg-white/10 text-gray-200 hover:bg-brand-yellow/10 hover:text-brand-yellow shadow-lg"
+              ? "bg-brand-blue/15 text-brand-yellow"
+              : "bg-brand-blue/5 text-brand-blue hover:bg-brand-yellow/10 hover:text-brand-yellow shadow-lg"
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -80,15 +79,15 @@ export default function NavBar() {
         </div>
       </nav>
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-slate-900/95 backdrop-blur-xl shadow-2xl border-t border-white/12 animate-fade-in-up">
+        <div className="lg:hidden bg-white/95 backdrop-blur-xl shadow-2xl border-t border-brand-blue/15 animate-fade-in-up">
           <div className="container mx-auto py-4 px-4 flex flex-col gap-2">
             {navLinks.map(({ name, path }) => (
               <Link
                 key={name}
                 to={path}
                 className={`block px-5 py-3 font-semibold rounded-xl text-base transition-all duration-150 ${pathname === path
-                  ? "text-brand-yellow bg-brand-blue/15 border border-brand-yellow/22 shadow-lg"
-                  : "text-gray-200 hover:text-brand-yellow hover:bg-brand-blue/12"
+                  ? "text-brand-yellow bg-brand-blue/10 border border-brand-yellow/10 shadow-lg"
+                  : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/8"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
