@@ -135,11 +135,11 @@
 @layer utilities {
   /* Premium brand colors */
   .text-brand-blue {
-    color: hsl(var(--brand-blue));
+    color: #33A4EE;
   }
   
   .text-brand-yellow {
-    color: hsl(var(--brand-yellow));
+    color: #F5C738;
   }
   
   .text-brand-blue-light {
@@ -159,11 +159,11 @@
   }
   
   .bg-brand-blue {
-    background-color: #3c79f5;
+    background-color: #33A4EE;
   }
   
   .bg-brand-yellow {
-    background-color: #ffd741;
+    background-color: #F5C738;
   }
   
   .bg-brand-blue-light {
@@ -192,15 +192,15 @@
 
   /* Enhanced premium gradients */
   .gradient-brand {
-    background: linear-gradient(135deg, hsl(var(--brand-yellow)), hsl(var(--brand-blue)));
+    background: linear-gradient(135deg, #F5C738 0%, #33A4EE 100%);
   }
   
   .gradient-brand-reverse {
-    background: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-yellow)));
+    background: linear-gradient(135deg, #33A4EE 0%, #F5C738 100%);
   }
   
   .gradient-text-brand {
-    background: linear-gradient(135deg, hsl(var(--brand-yellow)), hsl(var(--brand-blue)));
+    background: linear-gradient(110deg, #33A4EE 20%, #F5C738 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -209,10 +209,6 @@
   /* Enhanced animations */
   .animate-float {
     animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
   }
 
   .animate-slide-up {
@@ -262,15 +258,15 @@
 
   /* Premium glassmorphism effects */
   .glass-premium {
-    background: rgba(255, 255, 255, 0.90);
-    border-radius: 2.2rem;
-    backdrop-filter: blur(30px) saturate(1.35);
-    border: 1.25px solid rgba(60,120,245,0.10);
-    box-shadow: 0 12px 24px 0 rgba(60, 121, 245, 0.07), 0 3px 12px 0 rgba(255, 215, 65, 0.05);
+    background: rgba(255,255,255,0.93);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(18px) saturate(1.1);
+    border: 1px solid #F5C73822;
+    box-shadow: 0 7px 32px 0 #f5c73812, 0 2px 9px 0 #33A4EE09;
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(60, 121, 245, 0.09);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
@@ -304,7 +300,7 @@
 
   /* Fancy text gradients for logo, headings, oversized font scaling */
   .gradient-text-brand {
-    background: linear-gradient(110deg, #3c79f5 30%, #ffd741 68%, #60a9ff 95%);
+    background: linear-gradient(110deg, #33A4EE 20%, #F5C738 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

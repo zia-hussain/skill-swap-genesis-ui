@@ -1,6 +1,6 @@
+
 import { Link, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
 const navLinks = [
@@ -13,11 +13,11 @@ const navLinks = [
 
 function Logo() {
   return (
-    <div className="flex items-center gap-3">
-      <div className="w-12 h-12 bg-gradient-to-tr from-brand-yellow to-brand-blue/70 rounded-2xl flex items-center justify-center shadow-yellow-lg border border-white/30">
-        <Sparkles className="text-brand-yellow w-7 h-7 drop-shadow" />
+    <div className="flex items-center gap-2">
+      <div className="w-10 h-10 flex items-center justify-center bg-gradient-brand rounded-xl shadow-lg">
+        <Sparkles className="text-brand-yellow w-6 h-6" />
       </div>
-      <span className="font-bold tracking-tight text-xl sm:text-2xl gradient-text-brand font-inter select-none">Skill x Swap</span>
+      <span className="font-bold tracking-tight text-lg sm:text-2xl gradient-text-brand font-inter select-none">Skill x Swap</span>
     </div>
   );
 }
@@ -26,24 +26,19 @@ export default function NavBar() {
   const { pathname } = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 18);
+    const handleScroll = () => setIsScrolled(window.scrollY > 16);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   useEffect(() => setIsMobileMenuOpen(false), [pathname]);
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-white/85 backdrop-blur-2xl shadow-xl border-b border-brand-blue/15"
-        : "bg-white/70 backdrop-blur-xl shadow-lg"
-      }`}
-    >
-      <nav className="container mx-auto flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-white/90 backdrop-blur-2xl shadow-xl"
+        : "bg-white/80 backdrop-blur-lg"
+      }`}>
+      <nav className="container mx-auto flex items-center justify-between h-16 sm:h-20 px-4">
+        <Link to="/" className="flex items-center">
           <Logo />
         </Link>
         <div className="hidden lg:flex gap-4 items-center">
@@ -51,9 +46,10 @@ export default function NavBar() {
             <Link
               key={name}
               to={path}
-              className={`px-4 py-2 font-semibold text-base rounded-xl transition-all duration-200 ${pathname === path
-                ? "text-brand-blue bg-brand-yellow/60 border border-brand-blue/35 shadow-lg"
-                : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/8"
+              className={`px-4 py-2 font-semibold text-base rounded-xl transition-all duration-200 ${
+                pathname === path
+                  ? "text-brand-blue bg-brand-yellow/15 border border-brand-blue/20 shadow-md"
+                  : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/10"
               }`}
             >
               {name}
@@ -61,20 +57,17 @@ export default function NavBar() {
           ))}
           <Link
             to="/register-interest"
-            className="ml-4 px-6 py-2.5 rounded-xl bg-gradient-to-r from-brand-yellow to-brand-blue text-gray-900 font-bold shadow-yellow-lg hover:brightness-110 hover:scale-105 transition-transform"
+            className="ml-4 px-6 py-2.5 rounded-xl bg-gradient-brand text-white font-bold shadow-lg hover:brightness-110 hover:scale-105 transition-transform"
           >
             Join Early Access
           </Link>
         </div>
         <div className="lg:hidden">
           <button
-            className={`p-2.5 rounded-xl transition-all duration-200 ${isMobileMenuOpen
-              ? "bg-brand-blue/15 text-brand-yellow"
-              : "bg-brand-blue/5 text-brand-blue hover:bg-brand-yellow/10 hover:text-brand-yellow shadow-lg"
-            }`}
+            className="p-2.5 rounded-xl bg-brand-blue/10 text-brand-blue"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <span className="text-2xl">✖️</span> : <span className="text-2xl">☰</span>}
+            {isMobileMenuOpen ? <span className="text-xl">✖️</span> : <span className="text-xl">☰</span>}
           </button>
         </div>
       </nav>
@@ -85,9 +78,10 @@ export default function NavBar() {
               <Link
                 key={name}
                 to={path}
-                className={`block px-5 py-3 font-semibold rounded-xl text-base transition-all duration-150 ${pathname === path
-                  ? "text-brand-yellow bg-brand-blue/10 border border-brand-yellow/10 shadow-lg"
-                  : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/8"
+                className={`block px-5 py-3 font-semibold rounded-xl text-base transition-all duration-150 ${
+                  pathname === path
+                    ? "text-brand-yellow bg-brand-blue/10 border border-brand-yellow/10 shadow-lg"
+                    : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/8"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -96,7 +90,7 @@ export default function NavBar() {
             ))}
             <Link
               to="/register-interest"
-              className="mt-3 w-full text-center bg-gradient-to-r from-brand-yellow to-brand-blue text-gray-900 font-bold py-3 rounded-xl shadow-yellow-lg"
+              className="mt-3 w-full text-center bg-gradient-brand text-white font-bold py-3 rounded-xl shadow-lg"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               🚀 Join Early Access

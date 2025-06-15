@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,10 +19,10 @@ export default {
     extend: {
       colors: {
         brand: {
-          yellow: 'hsl(var(--brand-yellow))',
+          yellow: "#F5C738", // Set Primary
+          blue: "#33A4EE",   // Set Secondary
           'yellow-light': 'hsl(var(--brand-yellow-light))',
           'yellow-dark': 'hsl(var(--brand-yellow-dark))',
-          blue: 'hsl(var(--brand-blue))',
           'blue-light': 'hsl(var(--brand-blue-light))',
           'blue-dark': 'hsl(var(--brand-blue-dark))',
         },
