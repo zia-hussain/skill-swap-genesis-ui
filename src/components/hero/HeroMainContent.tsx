@@ -3,56 +3,38 @@ import { motion } from "framer-motion";
 
 export default function HeroMainContent() {
   return (
-    <>
-      {/* Enhanced Main Headline */}
+    <div className="flex flex-col items-center w-full">
       <motion.h1
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 36 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6 sm:mb-8 leading-[0.9] sm:leading-[0.85]"
+        transition={{ duration: 0.85, delay: 0.28, ease: "easeOut" }}
+        className="text-center text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-black leading-[1.05] tracking-tight mb-5 gradient-text-brand drop-shadow-md px-2"
+        style={{
+          WebkitTextStroke: 'transparent'
+        }}
       >
-        <span className="block bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-          Skill-Powered Learning.
+        Unlock <span className="gradient-text-brand">Learning</span>{" "}
+        with <br className="hidden xs:block" />
+        <span className="bg-gradient-to-r from-brand-yellow via-yellow-300 to-brand-blue bg-clip-text text-transparent">
+          Minimal, Skillful Swaps
         </span>
-        <motion.span 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="block bg-gradient-to-r from-brand-yellow via-yellow-400 to-brand-blue bg-clip-text text-transparent"
-        >
-          Human-First Connections.
-        </motion.span>
       </motion.h1>
-
-      {/* Enhanced Subheadline */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
+      <motion.p
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-        className="max-w-4xl mx-auto mb-8 sm:mb-12 px-2"
+        transition={{ duration: 0.7, delay: 0.34, ease: "easeOut" }}
+        className="max-w-2xl text-center text-base xs:text-lg sm:text-2xl text-gray-800 font-medium mb-2"
       >
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-600 leading-relaxed mb-3 sm:mb-4">
-          A global skill-sharing platform where you grow{" "}
-          <motion.span 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="font-bold text-brand-blue relative"
-          >
-            by helping others grow
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              className="absolute bottom-0 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-brand-yellow to-brand-blue rounded-full"
-            />
-          </motion.span>
-          .
-        </p>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-500">
-          Connect, learn, and transform together in the world's most innovative learning community.
-        </p>
-      </motion.div>
-    </>
+        The smoothest way to grow <span className="text-brand-blue font-semibold">by helping others grow</span>.
+      </motion.p>
+      <motion.p
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.39, ease: "easeOut" }}
+        className="max-w-xl text-center text-gray-500 text-sm xs:text-base mb-10"
+      >
+        Connect, learn, and transform. Premium learning community powered by true momentum.
+      </motion.p>
+    </div>
   );
 }
