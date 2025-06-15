@@ -7,46 +7,55 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 const containerVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (custom: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: custom * 0.18,
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  }),
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0 }
 };
+
+const HOME_MOTION_EASE = [0.25, 0.1, 0.25, 1];
 
 const Index = () => {
   return (
     <div className="bg-[#F6FAFD] min-h-screen font-inter" data-scroll-container>
       <NavBar />
       <main>
+        {/* Hero Section: animate immediately */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          custom={0}
+          transition={{
+            duration: 0.7,
+            ease: HOME_MOTION_EASE,
+            delay: 0.05
+          }}
         >
           <Hero />
         </motion.div>
+        {/* How It Works: slight delay for stagger effect */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-          custom={1}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.85,
+            ease: HOME_MOTION_EASE,
+            delay: 0.20
+          }}
         >
           <HowItWorks />
         </motion.div>
+        {/* Testimonials: longer delay for further stagger */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-          custom={2}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 1,
+            ease: HOME_MOTION_EASE,
+            delay: 0.35
+          }}
         >
           <Testimonials />
         </motion.div>
