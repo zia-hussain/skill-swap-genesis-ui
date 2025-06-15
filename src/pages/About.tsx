@@ -6,6 +6,7 @@ import { Users } from "lucide-react";
 export default function About() {
   return (
     <div className="bg-[#F6FAFD] min-h-screen font-inter">
+      <NavBar />
       <main className="pt-20">
         <section className="container py-16 px-2">
           <div className="max-w-3xl mx-auto">
@@ -27,6 +28,7 @@ export default function About() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
