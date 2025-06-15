@@ -55,6 +55,7 @@ export default {
         'sidebar-accent-foreground': "hsl(var(--sidebar-accent-foreground))",
         'sidebar-border': "hsl(var(--sidebar-border))",
         'sidebar-ring': "hsl(var(--sidebar-ring))",
+        glass: 'rgba(255,255,255,0.96)',
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
@@ -64,8 +65,20 @@ export default {
       },
       boxShadow: {
         soft: "0 2px 8px 0 rgba(0, 0, 0, 0.04)",
-        'glass': '0 8px 32px rgba(0, 0, 0, 0.1)',
-        'premium': '0 20px 40px rgba(0, 0, 0, 0.1)',
+        'glass': '0 4px 24px 0 rgba(50, 175, 255, 0.08), 0 1.5px 6px 0 rgba(245,199,56,0.10)',
+        'card': '0 10px 38px 0 rgba(51,164,238,0.06), 0 2px 8px 0 rgba(245,199,56,0.10)',
+        'btn': '0 2px 8px 0 rgba(51,164,238,0.06), 0 2px 8px 0 rgba(245,199,56,0.06)',
+        'neumorph': '0 6px 18px 0 rgba(51,164,238,0.11), 0 0.5px 3px 0 rgba(245,199,56,0.13)',
+      },
+      borderRadius: {
+        xl: '1.5rem',
+        'section': '1.1rem',
+        'card': '1.2rem',
+      },
+      backgroundImage: {
+        'gradient-brand': "linear-gradient(90deg, #e8f4fa 0%, #faf7e8 100%)",
+        'gradient-section': "linear-gradient(110deg, #eaf6fd 0%, #f3f3e7 100%)",
+        'gradient-soft-card': "linear-gradient(150deg, #f0fafd 0%, #fffbe9 100%)",
       },
       keyframes: {
         fadeInUp: {

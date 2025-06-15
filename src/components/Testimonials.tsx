@@ -37,34 +37,32 @@ const stats = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 px-4 bg-gradient-to-br from-white via-brand-blue/8 to-brand-yellow/8 overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 right-10 w-40 h-40 border border-brand-yellow/10 rounded-full" />
-        <div className="absolute bottom-10 left-10 w-32 h-32 border border-brand-blue/10 rounded-full" />
-        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-gradient-to-r from-brand-yellow/8 to-brand-blue/8 rounded-full blur-xl" />
-      </div>
-      <div className="container max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-white/85 backdrop-blur-xl rounded-full shadow border border-white/20">
+    <section className="relative py-24 px-3 bg-section-gradient overflow-hidden">
+      <div className="container max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-18">
+          <div className="inline-flex items-center gap-2 px-6 py-3 mb-8 glass-card rounded-full shadow border border-white/20">
             <Heart className="w-5 h-5 text-red-400" />
             <span className="text-sm font-semibold text-brand-blue tracking-wide">Community Love</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight gradient-text-brand">Real Stories, Real Impact</h2>
-          <p className="text-xl md:text-2xl text-brand-blue/70 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
+            style={{
+              background: "linear-gradient(93deg, #33A4EE 2%, #F5C738 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>
+            Real Stories, Real Impact
+          </h2>
+          <p className="text-lg md:text-2xl text-brand-blue/70 max-w-3xl mx-auto leading-relaxed">
             See how our community is transforming lives through skill sharing
           </p>
         </div>
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-7 mb-18">
           {stats.map((stat, idx) => (
-            <div key={idx} className="bg-white/90 backdrop-blur-xl rounded-3xl p-6 shadow-xl text-center border border-white/20">
-              <div className="flex justify-center mb-3">
-                <div className="w-12 h-12 bg-gradient-brand rounded-2xl flex items-center justify-center text-white">
-                  {stat.icon}
-                </div>
-              </div>
-              <div className="text-3xl font-bold text-brand-blue mb-1">{stat.number}</div>
-              <div className="text-sm text-brand-blue/70 font-medium">{stat.label}</div>
+            <div key={idx} className="bg-soft-card rounded-card p-7 shadow-neumorph text-center border border-white/20">
+              <div className="text-3xl font-extrabold text-brand-blue mb-1">{stat.number}</div>
+              <div className="text-sm text-brand-blue/70 font-semibold">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -72,8 +70,7 @@ export default function Testimonials() {
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, idx) => (
             <div key={idx} className="group">
-              <div className="bg-white/85 backdrop-blur-lg rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 h-full flex flex-col group-hover:-translate-y-1.5 border border-white/20 relative overflow-hidden">
-                <Quote className="absolute top-4 right-4 text-brand-yellow/15 w-8 h-8" />
+              <div className="bg-white/98 rounded-card p-8 shadow-neumorph border border-white/20 relative overflow-hidden flex flex-col h-full">
                 {/* Rating */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -86,7 +83,7 @@ export default function Testimonials() {
                 </p>
                 {/* Skills exchanged */}
                 <div className="mb-4">
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-yellow/15 to-brand-blue/10 rounded-full px-4 py-2 text-sm font-medium text-brand-blue">
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-yellow/18 to-brand-blue/11 rounded-full px-4 py-2 text-sm font-medium text-brand-blue">
                     <Sparkles className="w-4 h-4 text-brand-yellow" />
                     {testimonial.skills}
                   </div>
@@ -106,16 +103,11 @@ export default function Testimonials() {
           ))}
         </div>
         {/* Mission Statement */}
-        <div className="relative">
-          <div className="bg-gradient-to-r from-brand-blue/15 to-brand-yellow/15 rounded-3xl p-12 md:p-16 text-brand-blue shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-10 left-10 w-20 h-20 border border-white/20 rounded-full"></div>
-              <div className="absolute bottom-10 right-10 w-16 h-16 border border-white/20 rounded-full"></div>
-              <div className="absolute top-1/2 right-20 w-12 h-12 border border-white/20 rounded-full"></div>
-            </div>
-            <div className="relative z-10 flex flex-col lg:flex-row gap-8 items-center">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-6">
+        <div className="relative mt-12">
+          <div className="bg-soft-card rounded-section p-10 md:p-16 text-brand-blue shadow-neumorph overflow-hidden">
+            <div className="flex flex-col lg:flex-row gap-6 items-center">
+              <div className="flex-1 flex flex-col gap-6 items-start">
+                <div className="flex items-center gap-3 mb-2">
                   <Quote className="w-10 h-10 text-brand-yellow" />
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -123,29 +115,30 @@ export default function Testimonials() {
                     ))}
                   </div>
                 </div>
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight gradient-text-brand">Our Mission</h2>
-                <p className="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight"
+                  style={{
+                    background: "linear-gradient(97deg, #33A4EE 10%, #F5C738 82%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent"
+                  }}
+                >Our Mission</h2>
+                <p className="text-xl md:text-2xl mb-5 leading-relaxed opacity-90">
                   "We believe the next wave of learning will be powered not by institutions, but by communities. No gatekeeping, no money—just real people sharing real expertise, creating connections that last a lifetime."
                 </p>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-brand rounded-full flex items-center justify-center">
-                      <Heart className="w-8 h-8 text-white" />
-                    </div>
+                <div className="flex gap-5 items-center">
+                  <div className="flex items-center gap-3">
+                    <Heart className="w-8 h-8 text-white bg-brand-blue rounded-full p-1 flex-shrink-0" />
                     <div>
-                      <div className="font-bold text-2xl text-brand-blue">Samantha</div>
-                      <div className="text-brand-blue/70 text-lg">Founder & Visionary</div>
+                      <div className="font-bold text-lg text-brand-blue">Samantha</div>
+                      <div className="text-brand-blue/60 text-sm">Founder & Visionary</div>
                     </div>
                   </div>
-                  <div>
-                    <Link
-                      to="/register-interest"
-                      className="inline-flex items-center gap-3 bg-gradient-brand text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
-                    >
-                      Join Our Mission
-                      <Users className="w-5 h-5" />
-                    </Link>
-                  </div>
+                  <a
+                    href="/register-interest"
+                    className="ml-6 px-7 py-2.5 btn-glass-blue font-bold rounded-3xl shadow btn-shadow"
+                  >
+                    Join Our Mission
+                  </a>
                 </div>
               </div>
             </div>

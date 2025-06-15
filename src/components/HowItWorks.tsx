@@ -36,27 +36,35 @@ const features = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative py-24 px-4 bg-gradient-to-br from-white via-brand-yellow/10 to-brand-blue/10 overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-32 h-32 border border-brand-yellow/15 rounded-full" />
-        <div className="absolute bottom-20 left-20 w-24 h-24 border border-brand-blue/15 rounded-full" />
+    <section id="how-it-works" className="relative py-24 px-3 bg-section-gradient overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Light, soft background decor */}
+        <div className="absolute top-20 right-20 w-36 h-36 border border-brand-yellow/10 rounded-full" />
+        <div className="absolute bottom-20 left-20 w-20 h-20 border border-brand-blue/10 rounded-full" />
       </div>
-      <div className="container max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-white/90 backdrop-blur-md rounded-full shadow border border-white/20">
+      <div className="container max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-6 py-3 mb-7 glass-card rounded-full shadow border border-white/20">
             <Sparkles className="w-5 h-5 text-brand-yellow" />
             <span className="text-sm font-semibold text-brand-blue tracking-wide">Simple Process</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight gradient-text-brand">How It Works</h2>
-          <p className="text-xl md:text-2xl text-brand-blue/70 max-w-3xl mx-auto leading-relaxed mb-8">
+          <h2
+            className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
+            style={{
+              background: "linear-gradient(90deg, #33A4EE 25%, #F5C738 98%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >How It Works</h2>
+          <p className="text-lg md:text-2xl text-brand-blue/70 max-w-3xl mx-auto leading-relaxed mb-8">
             Three simple steps to start your transformative skill-sharing journey
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-2 bg-white/85 backdrop-blur-sm rounded-2xl px-4 py-2 shadow"
+                className="flex items-center gap-2 bg-white/90 rounded-2xl px-4 py-2 shadow-neumorph"
               >
                 {feature.icon}
                 <span className="text-sm font-medium text-brand-blue">{feature.text}</span>
@@ -65,14 +73,14 @@ export default function HowItWorks() {
           </div>
         </div>
         {/* Steps Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 mb-18">
           {steps.map((step, idx) => (
             <div key={idx} className="relative group">
               {idx < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-20 -right-6 w-12 h-0.5 bg-gradient-to-r from-brand-yellow/40 to-brand-blue/40" />
               )}
-              <div className={`relative bg-gradient-to-br ${step.bgGradient} backdrop-blur-md rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col group-hover:-translate-y-2 border border-white/20`}>
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-white to-gray-50 rounded-full flex items-center justify-center shadow-md border border-white/70">
+              <div className={`relative bg-soft-card rounded-section p-8 shadow-neumorph hover:shadow-lg transition h-full flex flex-col group-hover:-translate-y-2 border border-white/30`}>
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-white to-gray-50 rounded-full flex items-center justify-center shadow border">
                   <span className="text-lg font-bold text-brand-blue/90">{step.number}</span>
                 </div>
                 <div className="relative mb-6">
@@ -87,17 +95,16 @@ export default function HowItWorks() {
           ))}
         </div>
         <div className="text-center">
-          <div className="bg-gradient-to-r from-brand-blue/10 via-brand-yellow/10 to-brand-blue/10 backdrop-blur-lg rounded-3xl p-8 shadow border border-white/20">
-            <h3 className="text-2xl md:text-3xl font-bold text-brand-blue mb-4">Ready to Start Your Journey?</h3>
+          <div className="bg-soft-card backdrop-blur-lg rounded-section p-8 shadow-neumorph border border-white/10 max-w-3xl mx-auto mt-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-brand-blue mb-3">Ready to Start Your Journey?</h3>
             <p className="text-lg text-brand-blue/70 mb-6 max-w-2xl mx-auto">
               Join thousands of learners who are already growing through skill sharing
             </p>
             <a
-              href="#"
-              className="inline-flex items-center gap-3 bg-gradient-brand text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+              href="/register-interest"
+              className="inline-flex items-center gap-3 btn-glass-yellow font-bold px-7 py-3 rounded-3xl shadow-neumorph hover:opacity-90"
             >
               Get Started Now
-              <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>

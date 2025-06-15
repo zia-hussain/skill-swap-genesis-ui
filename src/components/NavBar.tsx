@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { Sparkles } from "lucide-react";
@@ -33,23 +32,20 @@ export default function NavBar() {
   }, []);
   useEffect(() => setIsMobileMenuOpen(false), [pathname]);
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-white/90 backdrop-blur-2xl shadow-xl"
-        : "bg-white/80 backdrop-blur-lg"
-      }`}>
-      <nav className="container mx-auto flex items-center justify-between h-16 sm:h-20 px-4">
+    <header className="fixed top-0 w-full z-40 bg-brand-gradient shadow-none border-b border-slate-100/50">
+      <nav className="container flex items-center justify-between h-16 sm:h-20 px-4">
         <Link to="/" className="flex items-center">
           <Logo />
         </Link>
-        <div className="hidden lg:flex gap-4 items-center">
+        <div className="hidden lg:flex gap-2 items-center">
           {navLinks.map(({ name, path }) => (
             <Link
               key={name}
               to={path}
-              className={`px-4 py-2 font-semibold text-base rounded-xl transition-all duration-200 ${
+              className={`px-5 py-2 font-semibold rounded-3xl transition-all duration-200 ${
                 pathname === path
-                  ? "text-brand-blue bg-brand-yellow/15 border border-brand-blue/20 shadow-md"
-                  : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/10"
+                  ? "text-brand-blue bg-white/70 shadow-neumorph border border-slate-200"
+                  : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/7"
               }`}
             >
               {name}
@@ -57,7 +53,8 @@ export default function NavBar() {
           ))}
           <Link
             to="/register-interest"
-            className="ml-4 px-6 py-2.5 rounded-xl bg-gradient-brand text-white font-bold shadow-lg hover:brightness-110 hover:scale-105 transition-transform"
+            className="ml-4 px-7 py-2.5 rounded-3xl btn-glass text-brand-blue font-bold shadow-neumorph hover:opacity-90"
+            style={{ pointerEvents: "auto" }}
           >
             Join Early Access
           </Link>
@@ -72,16 +69,16 @@ export default function NavBar() {
         </div>
       </nav>
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-xl shadow-2xl border-t border-brand-blue/15 animate-fade-in-up">
-          <div className="container mx-auto py-4 px-4 flex flex-col gap-2">
+        <div className="lg:hidden bg-white/96 shadow-xl border-t rounded-b-3xl border-brand-blue/7">
+          <div className="container py-4 px-4 flex flex-col gap-2">
             {navLinks.map(({ name, path }) => (
               <Link
                 key={name}
                 to={path}
-                className={`block px-5 py-3 font-semibold rounded-xl text-base transition-all duration-150 ${
+                className={`block px-5 py-3 font-semibold rounded-full text-base transition-all duration-150 text-center ${
                   pathname === path
-                    ? "text-brand-yellow bg-brand-blue/10 border border-brand-yellow/10 shadow-lg"
-                    : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/8"
+                    ? "text-brand-blue bg-brand-yellow/13 border border-brand-blue/8 shadow"
+                    : "text-brand-blue hover:text-brand-yellow hover:bg-brand-blue/12"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -90,7 +87,7 @@ export default function NavBar() {
             ))}
             <Link
               to="/register-interest"
-              className="mt-3 w-full text-center bg-gradient-brand text-white font-bold py-3 rounded-xl shadow-lg"
+              className="mt-3 w-full bg-white/90 text-brand-blue font-bold py-3 rounded-full shadow btn-glass"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               🚀 Join Early Access

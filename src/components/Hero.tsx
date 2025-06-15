@@ -4,9 +4,9 @@ import { Sparkles, Rocket, TrendingUp } from "lucide-react";
 
 function HeroBadge() {
   return (
-    <div className="inline-flex items-center gap-2 px-7 py-2 glass-premium shadow-glass text-xs sm:text-sm text-brand-blue font-semibold font-inter select-none mx-auto mb-4">
+    <div className="inline-flex items-center gap-2 px-6 py-2 mb-4 bg-white/80 rounded-2xl shadow-neumorph border border-white/80 text-xs sm:text-sm text-brand-blue font-semibold font-inter select-none">
       <Sparkles className="text-brand-yellow w-4 h-4 me-1" />
-      <span className="font-bold tracking-wide text-brand-blue">Early Access · Invite-Only</span>
+      <span className="font-bold tracking-wide">Early Access · Invite-Only</span>
       <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse ms-1" />
     </div>
   );
@@ -14,21 +14,30 @@ function HeroBadge() {
 
 function HeroBackground() {
   return (
-    <div className="absolute inset-0 pointer-events-none z-0">
-      <div className="absolute -top-24 left-0 w-[380px] h-[380px] rounded-full bg-gradient-to-br from-brand-yellow/30 to-brand-blue/15 blur-3xl opacity-60" />
-      <div className="absolute top-[25%] right-0 w-[260px] h-[260px] rounded-full bg-gradient-to-tr from-brand-blue/20 to-brand-yellow/10 blur-xl opacity-25" />
-      <div className="absolute bottom-20 left-1/3 w-[160px] h-[160px] rounded-full bg-white/40 blur-xl opacity-12" />
-    </div>
+    <div className="absolute inset-0 z-0 pointer-events-none bg-brand-gradient" />
   );
 }
 
 function GradientHeadline() {
   return (
-    <h1 className="text-center font-black mb-7 w-full px-2 text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-tight gradient-text-brand"
-        style={{ WebkitTextStroke: 'transparent' }}>
-      <span>Share &amp; Master Skills — <span className="text-brand-yellow">Effortlessly.</span></span>
+    <h1
+      className="text-center font-black mb-7 w-full px-2 text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
+      style={{
+        background: "linear-gradient(103deg, #33A4EE 20%, #F5C738 90%)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text",
+      }}
+    >
+      <span>Share &amp; Master Skills — <span style={{ color: "#F5C738" }}>Effortlessly.</span></span>
       <br />
-      <span className="text-brand-blue/95">Your premium global skill community.</span>
+      <span style={{
+        background: "linear-gradient(103deg, #33A4EE 70%, #F5C738 100%)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent"}}
+      >
+        Your premium global skill community.
+      </span>
     </h1>
   );
 }
@@ -36,10 +45,10 @@ function GradientHeadline() {
 function HeroSubtext() {
   return (
     <>
-      <p className="max-w-xl text-center text-base sm:text-xl md:text-2xl text-brand-blue font-medium mb-1">
+      <p className="max-w-xl text-center text-lg xs:text-xl md:text-2xl text-brand-blue/90 font-medium mb-1">
         Grow by helping others, <span className="text-brand-yellow font-semibold underline underline-offset-2">effortlessly.</span>
       </p>
-      <p className="max-w-md text-center text-brand-blue/75 text-sm sm:text-lg mb-8">
+      <p className="max-w-md text-center text-brand-blue/75 text-base sm:text-lg mb-7">
         Swap skills, unlock opportunities, and join a thoughtful, premium community built just for you.
       </p>
     </>
@@ -48,21 +57,18 @@ function HeroSubtext() {
 
 function CTAButtons() {
   return (
-    <div className="flex flex-col xs:flex-row gap-3 xs:gap-6 w-full xs:w-auto justify-center items-center mb-7">
+    <div className="flex flex-col xs:flex-row gap-3 xs:gap-6 w-full xs:w-auto justify-center items-center mb-8">
       <Link
         to="/register-interest"
-        className="py-3 px-8 rounded-full bg-brand-yellow font-bold text-lg text-brand-blue shadow-yellow-lg hover:brightness-105 hover:scale-105 transition-all focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 flex items-center gap-2"
-        style={{
-          boxShadow: "0 8px 24px 0 #F5C73833, 0 2px 8px 0 #33A4EE17"
-        }}
+        className="py-3 px-8 rounded-full btn-glass-yellow text-[1.08rem] shadow-xl min-w-[210px] text-center hover:shadow-lg focus-visible:ring-2 focus-visible:ring-brand-blue"
       >
-        <Rocket className="w-5 h-5" />
+        <Rocket className="w-5 h-5 inline mr-2 -mt-1" />
         Join Early Access
-        <TrendingUp className="w-5 h-5" />
+        <TrendingUp className="w-5 h-5 inline ml-2 -mt-1" />
       </Link>
       <a
         href="#how-it-works"
-        className="py-3 px-8 rounded-full font-bold bg-white/80 text-brand-blue border border-brand-blue/10 shadow hover:shadow-md text-lg transition-all hover:bg-brand-blue/10 hover:text-brand-yellow focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 flex items-center gap-2"
+        className="py-3 px-8 rounded-full btn-glass-blue shadow-xl text-[1.08rem] min-w-[210px] text-center hover:shadow-lg focus-visible:ring-2 focus-visible:ring-brand-blue"
       >
         Explore How It Works
       </a>
@@ -88,9 +94,9 @@ function SocialProofCard() {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[98svh] flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-white via-brand-yellow/12 to-brand-blue/10 font-inter px-4 pt-16 sm:pt-28 pb-16 w-full text-brand-blue">
+    <section className="relative min-h-[98vh] flex flex-col justify-center items-center overflow-hidden pt-14 sm:pt-32 pb-12 px-2 bg-brand-gradient">
       <HeroBackground />
-      <div className="z-10 flex flex-col items-center w-full relative">
+      <div className="z-10 flex flex-col items-center w-full relative pb-7">
         <HeroBadge />
         <GradientHeadline />
         <HeroSubtext />
