@@ -1,0 +1,24 @@
+name: Export Lovable Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Prepare static export folder
+        run: |
+          mkdir -p static-export
+          cp -r * static-export/
+
+      - name: Upload exported static files
+        uses: actions/upload-artifact@v3
+        with:
+          name: site-export
+          path: static-export/
